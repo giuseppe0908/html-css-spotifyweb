@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav{
+  height: 80px;
+  background-color: #090B12;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.text-uppercase{
+  text-transform: uppercase;
+}
+nav > a{
+  border: 1px solid white;
+  padding: 0px 34px;
+  border-radius: 20px;
+  height: 39px;
+  line-height: 39px;
+  color: white;
+  text-decoration: none;
+  /* display: flex;
+  justify-content: flex-end; */
+
+
+}
+.side-bar{
+  width: 200px;
+  height: 100vh;
+  background-color: black;
+  position:fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.side-bar > .logo > img{
+  height: 60px;
+}
+ .side-bar .content > ul li{
+   list-style: none;
+   margin: 20px 20px;
+   color: #7E8184;
+ }
+ .content > ul li >i{
+   margin-right: 5px;
+ }
+
+.content ul li .square{
+  height: 30px;
+  width: 30px;
+  font-size: 24px;
+  background-color: lightgrey;
+  color: black;
+  text-align: center;
+}
+
+
+ul li .display-inline{
+  display: inline-block;
+}
+.container{
+  width: 80%;
+  margin: 0 auto;
+}
+
+main{
+  /* background-color: #141922; */
+  /* display: flex;
+  height: 100vh;
+  align-items: center; */
+  margin-left: 200px;
+}
+main > ul{
+text-align: center;
+}
+main > ul > li{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
+.raccolta{
+  display:flex;
+  flex-direction: row;
+
+}
+.card{
+  height: 200px;
+  width: 200px;
+  background-color: yellow;
+  margin-right: 20px;
+
+}
+
+.footer{
+  height: 150px;
+  width: 100%;
+  background-color: lightgrey;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+
+}
