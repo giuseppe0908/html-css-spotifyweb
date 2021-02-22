@@ -7,6 +7,11 @@
 nav{
   height: 80px;
   background-color: #090B12;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: calc(100vw - (200px));
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -44,8 +49,21 @@ nav > a{
    margin: 20px 20px;
    color: #7E8184;
  }
+ .color-grey{
+   color: #7E8184;
+ }
  .content > ul li >i{
    margin-right: 5px;
+ }
+ .border{
+   border-left: 3px solid green;
+   border-height: 20px;
+   height: 30px;
+   position: relative;
+   left: -19px;
+   margin-right: 25px;
+   padding: 0 17px;
+   line-height: 30px;
  }
 
 .content ul li .square{
@@ -57,51 +75,145 @@ nav > a{
   text-align: center;
 }
 
-
-ul li .display-inline{
+ .display-inline{
   display: inline-block;
+  position: relative;
 }
+
+ .playlist{
+  position: absolute;
+  top: 0;
+  left: 36px;
+  width: max-content;
+  margin-top: 6px;
+}
+
 .container{
   width: 80%;
   margin: 0 auto;
 }
 
 main{
-  /* background-color: #141922; */
+  background-color: #141922;
   /* display: flex;
   height: 100vh;
   align-items: center; */
-  margin-left: 200px;
+  padding-left: 210px;
+
+  height: 200vh;
 }
 main > ul{
 text-align: center;
+color: #7E8184;
+padding: 20px;
+margin-top: 77px;
 }
 main > ul > li{
   display: inline-block;
   margin-right: 10px;
 }
-
+.color-white{
+  color: white;
+}
+main h2 , main p{
+  margin-bottom: 15px;
+}
 
 .raccolta{
   display:flex;
   flex-direction: row;
+  flex-shrink: 3;
+  overflow-y: auto;
+}
+.card > img{
+  height: 180px;
+  width: 180px;
+  /* display: flex;
+  flex-wrap: wrap; */
 
+}
+.card > h4 , .card p{
+  display: flex;
+  justify-content: center;
 }
 .card{
-  height: 200px;
+  /* height: 200px;
   width: 200px;
-  background-color: yellow;
+  background-color: yellow; */
   margin-right: 20px;
+  position:relative;
+  /* flex-basis: 20%; */
+  /* display: flex; */
+  /* flex-shrink: 1; */
+}
+/* PLAYER CON SFOCATURA */
 
+.card .layover{
+  height: 78%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  display: none;
 }
 
-.footer{
-  height: 150px;
+ .card .layover i{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  display: block;
+}
+
+ .card:hover .layover{
+   display: block;
+   cursor: pointer;
+ }
+/* PLAYER CON SFOCATURA */
+
+.craeted-for{
+  display:flex;
+  flex-direction: row;
+}
+/* .craeted-for > .card{
+  display: flex;
+  flex-direction: row;
+} */
+
+.mg-top{
+  margin-top: 30px;
+}
+
+.circle{
+  border-radius: 50%;
+}
+
+footer{
+  height: 100px;
   width: 100%;
   background-color: lightgrey;
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 3;
+}
+.img-cuore{
+  display: inline-block;
+  line-height: 100px;
+}
+.img-cuore > img{
+  height: 50px;
+  width: 50px;
 
+}
+
+@media all and(max-width: 1393px) {
+  .card{
+    /* width: calc(100% / 12 *4);
+    flex-basis: 50%;*/
+    flex-wrap: wrap;
+  }
 }
