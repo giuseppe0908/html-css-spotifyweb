@@ -88,6 +88,30 @@ nav > a{
   margin-top: 6px;
 }
 
+ .profile{
+
+  /* flex-direction:column;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;*/
+margin-top: 50px;
+}
+.profile hr{
+  width: 80%;
+  margin: 0 auto;
+  color: #7E8184;   /* non so perchè non mi fa cambiare il colore ad hr */
+
+}
+.profile  ul li{
+  color: #7E8184;
+  margin: 20px 20px;
+  list-style: none;
+}
+
+.profile .color-white > li {
+  color: white;
+}
+
 .container{
   width: 80%;
   margin: 0 auto;
@@ -95,13 +119,10 @@ nav > a{
 
 main{
   background-color: #141922;
-  /* display: flex;
-  height: 100vh;
-  align-items: center; */
   padding-left: 210px;
-
   height: 200vh;
 }
+
 main > ul{
 text-align: center;
 color: #7E8184;
@@ -112,31 +133,31 @@ main > ul > li{
   display: inline-block;
   margin-right: 10px;
 }
-.color-white{
-  color: white;
-}
+
 main h2 , main p{
   margin-bottom: 15px;
+}
+.color-white{
+  color: white;
 }
 
 .raccolta{
   display:flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   flex-shrink: 3;
-  overflow-y: auto;
+  overflow-y: scroll;
+  flex-wrap: wrap;
 }
 .card > img{
   height: 180px;
   width: 180px;
-  /* display: flex;
-  flex-wrap: wrap; */
-
 }
 .card > h4 , .card p{
   display: flex;
   justify-content: center;
 }
 .card{
+
   /* height: 200px;
   width: 200px;
   background-color: yellow; */
@@ -200,20 +221,21 @@ footer{
   left: 0;
   z-index: 3;
 }
+
 .img-cuore{
   display: inline-block;
   line-height: 100px;
 }
+
 .img-cuore > img{
   height: 50px;
   width: 50px;
-
 }
 
 @media all and(max-width: 1393px) {
-  .card{
+  /* .card{
     /* width: calc(100% / 12 *4);
-    flex-basis: 50%;*/
-    flex-wrap: wrap;
+    flex-basis: 50%;
+    flex-wrap: wrap; */
   }
 }
