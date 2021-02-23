@@ -16,17 +16,17 @@
   </header>
 
   <aside class="side-bar">
-     <div class="logo">
-       <img src="./assets/img/logo.png" alt="logo-spotify">
-     </div>
+
+       <img class="logo" src="./assets/img/logo.png" alt="logo-spotify">
+       <img class="display-none"src="https://images-na.ssl-images-amazon.com/images/I/71HBfXs9bsL._AC_SL1000_.jpg" alt="logo senza scritta">
     <div class="content">
        <ul>
-         <li  class="border"><i class="fas fa-house-damage"></i>Home</li>
-         <li><i class="fas fa-search"></i>Cerca</li>
-         <li><svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg> La tua libreria</li>
+         <li class="border"><i class="fas fa-house-damage"></i><a href="#">Home</a></li>
+         <li><i class="fas fa-search"></i><a href="#">Cerca</a></li>
+         <li><svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg> <a href="#">La tua libreria</a></li>
        </ul>
 
-       <ul>
+       <ul class="scompari">
          <li class="text-uppercase">playlist</li>
          <li class="display-inline"><div class="square">+</div><spann class="playlist">Crea Playlist</span></li>
        </ul>
@@ -44,11 +44,11 @@
 
     <div class="profile">
        <ul>
-         <li><i class="far fa-arrow-alt-circle-down"> Installa app</i></li>
+         <li><i class="far fa-arrow-alt-circle-down"><a href="#"> Installa app</a></i></li>
        </ul>
        <hr>
-       <ul class="color-white">
-         <li><i class="fas fa-user-circle"></i> John Doe</li>
+       <ul>
+         <li><i class="fas fa-user-circle"></i><a class="color-white" href="#"> John Doe</a></li>
        </ul>
     </div>
 
@@ -154,12 +154,18 @@
 
   <footer>
     <div class="parte-sx">
-      <ul>
-        <li><img src="https://img.ibs.it/images/5051891142718_0_306_0_75.jpg" alt=""></li>
-        <li><p class="color-white">Sinister</p></li>
-        <li><p class="block">Brano Nome</p></li>
+      <img src="https://img.ibs.it/images/5051891142718_0_306_0_75.jpg" alt="">
+      <div class="descrizione-canzone">
+        <p class="color-white">Sinister</p>
+        <p class="block"> <br>Brano Nome</p>
+      </div>
+
+      <ul class="nome-brano">
+        <li><i class="far fa-heart"></i></li>
+        <li><i class="far fa-folder"></i></li>
       </ul>
     </div>
+
     <div class="parte-centrale">
       <ul class="display-inline">
         <li><i class="fas fa-random"></i></li>
