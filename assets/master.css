@@ -1,8 +1,10 @@
+/*--- AZZERAMENTO ---*/
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/*--- HEADER ---*/
 
 nav{
   height: 80px;
@@ -16,9 +18,11 @@ nav{
   justify-content: flex-end;
   align-items: center;
 }
+
 .text-uppercase{
   text-transform: uppercase;
 }
+
 nav > a{
   border: 1px solid white;
   padding: 0px 34px;
@@ -27,16 +31,18 @@ nav > a{
   line-height: 39px;
   color: white;
   text-decoration: none;
-  /* display: flex;
-  justify-content: flex-end; */
 }
+
 nav > a:hover{
   transform: scale(1.1);
 }
+
 a{
   text-decoration: none;
   color: #7E8184;
 }
+/*--- SIDE-BAR ---*/
+
 .side-bar{
   width: 200px;
   height: calc(100% - 100px);
@@ -49,12 +55,16 @@ a{
   display: flex;
   flex-direction: column;
 }
+
 .side-bar img{
-  height: 60px;
+  /* height: 60px; */
+  width: 100%;
 }
+
 .display-none{
   display: none;
 }
+
  .side-bar .content > ul li{
    list-style: none;
    margin: 20px 20px;
@@ -62,16 +72,20 @@ a{
    font-size: 15px;
    justify-content: flex-start;
  }
-  .side-bar .content > ul li:hover{
+
+  .side-bar .content > ul li:hover,  .side-bar .content > ul li a:hover{
     cursor: pointer;
     color: white;
   }
+
  .color-grey{
    color: #7E8184;
  }
+
  .content > ul li >i{
    margin-right: 5px;
  }
+
  .border{
    border-left: 3px solid green;
    border-height: 20px;
@@ -96,10 +110,12 @@ a{
   /* display: inline-block; */
   position: relative;
 }
+
 .categorie{
     height: 35vh;
     overflow-y: auto;
 }
+
  .playlist{
   position: absolute;
   top: 0;
@@ -109,23 +125,20 @@ a{
 }
 
  .profile{
-
- /* justify-content: flex-end; */
-  /*
-/*  justify-content: flex-end;  ho povato a fare flex-end ma non lo mette alla fine */
-/* margin-top: 50px; */
   margin-top: auto;
 }
-.side-bar .profile > ul li:hover{
+
+.side-bar .profile > ul li:hover,.side-bar .profile > ul li a:hover {
   cursor: pointer;
   color: white;
 }
+
 .profile hr{
   width: 80%;
   margin: 0 auto;
-  border:1px solid #7E8184;   /* non so perchè non mi fa cambiare il colore ad hr */
-
+  border:1px solid #7E8184;
 }
+
 .profile  ul li{
   color: #7E8184;
   margin: 20px 20px;
@@ -141,6 +154,8 @@ a{
   margin: 0 auto;
 }
 
+/*--- MAIN ---*/
+
 main{
   background-color: #141922;
   padding-left: 210px;
@@ -155,16 +170,14 @@ margin-top: 77px;
 }
 main > ul li:first-child{
   border-bottom: 1px solid green;
-
-  /* border-bottom-width:10%; */
-  border-bottom-width: medium;
-
+  /* border-bottom-width: medium; */
 }
-main > ul > li:hover{
 
+main > ul > li:hover{
     cursor: pointer;
     color: white;
 }
+
 main > ul > li{
   display: inline-block;
   margin-right: 10px;
@@ -174,6 +187,7 @@ main > ul > li{
 main h2 , main p{
   margin-bottom: 15px;
 }
+
 .color-white{
   color: white;
 }
@@ -190,19 +204,17 @@ main h2 , main p{
   height: 180px;
   width: 180px;
 }
+
 .card > h4 , .card p{
   display: flex;
   justify-content: center;
 }
+
 .card{
-  /* width: calc(100%/6 - 10px); */
-  /* margin-right: 20px; */
   margin: 5px;
   position:relative;
-  /* flex-basis: 20%; */
-  /* display: flex; */
-  /* flex-shrink: 1; */
 }
+
 /* PLAYER CON SFOCATURA */
 
 .card .layover{
@@ -235,10 +247,6 @@ main h2 , main p{
   display:flex;
   flex-direction: row;
 }
-/* .craeted-for > .card{
-  display: flex;
-  flex-direction: row;
-} */
 
 .mg-top{
   margin-top: 30px;
@@ -247,6 +255,8 @@ main h2 , main p{
 .circle{
   border-radius: 50%;
 }
+
+/*--- FOOTER ---*/
 
 footer{
   height: 100px;
@@ -259,6 +269,7 @@ footer{
   display: flex;
   justify-content: space-between;
 }
+
  .parte-sx{
    display: flex;
    align-self: center;
@@ -275,9 +286,11 @@ footer{
   width: 50px;
   margin: 10px 10px;
 }
+
 .block{
   margin-top: -18px;
 }
+
 .descrizione-canzone{
  /* line-height: 100px; */
  padding-top: 20px;
@@ -297,25 +310,39 @@ footer{
 .parte-centrale{
   display: flex;
   justify-content: center;
+  /* align-items: center; */
+}
+
+.parte-dx{
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: center;
 }
 
 .parte-dx > ul  li{
-     display: inline-block;
-     justify-content: flex-end;
-
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px 10px;
 }
 
+/*--- MEDIA QUERY PER TABLET MD ---*/
 
 @media all and (max-width: 992px) {
    .card{
    width: calc(100% / 4 -10px);
   }
 }
+
+/*--- MEDIA QUERY PER SM---*/
+
 @media all and (max-width: 768px) {
    .card{
    width: calc(100% /2 -10px);
   }
 }
+
+/*--- MEDIA QUERY PER SMARTPHONE XS ---*/
+
  @media all and (min-width: 0px) and (max-width: 768px) {
    .card{
    width: calc(100% /2 -10px);
