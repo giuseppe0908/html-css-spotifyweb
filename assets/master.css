@@ -51,14 +51,12 @@ a{
   position:fixed;
   top: 0;
   left: 0;
-  /* bottom: -100px; */
   z-index: 2;
   display: flex;
   flex-direction: column;
 }
 
 .side-bar img{
-  /* height: 40px; */
   margin: 0 10px;
   width: 60%;
 }
@@ -81,7 +79,7 @@ a{
   }
 
  .color-grey{
-   color: #888888 ; /* #7E8184 */
+   color: #888888 ;
  }
 
  .content > ul li >i{
@@ -109,7 +107,6 @@ a{
 }
 
  .display-inline{
-  /* display: inline-block; */
   position: relative;
 }
 
@@ -170,13 +167,15 @@ color: #7E8184;
 padding: 20px;
 margin-top: 77px;
 }
+
 main > ul li:first-child{
   border-bottom: 1px solid #ADFF2E;
-  /* border-bottom-width: medium; */
 }
+
 #border-bottom{
   position: relative;
 }
+
 main > ul #border-bottom:before{
   content : " ";
   position: absolute;
@@ -187,6 +186,7 @@ main > ul #border-bottom:before{
   border-bottom:1px solid #141922;
   z-index: 2;
 }
+
 main > ul #border-bottom:after{
   content : " ";
   position: absolute;
@@ -212,7 +212,6 @@ main > ul > li{
 main h2 , main p{
   margin-bottom: 15px;
   margin-left: 6px;
-
 }
 
 .color-white{
@@ -245,10 +244,8 @@ main h2 , main p{
 
 }
 .album img{
-
   height: 49%;
   width: 48%;
-  /* margin:0 auto; */
 }
 
 
@@ -261,9 +258,10 @@ main h2 , main p{
 .card{
   margin: 5px 5px;
   position:relative;
+  font-size: 0;
 }
 
-/* PLAYER CON SFOCATURA */
+/* PLAYER CON OPACITA' */
 
 .card .layover{
   height: 100%;
@@ -289,7 +287,7 @@ main h2 , main p{
    display: block;
    cursor: pointer;
  }
-/* PLAYER CON SFOCATURA */
+/* PLAYER CON OPACITA' */
 
 .craeted-for{
   display:flex;
@@ -312,7 +310,7 @@ main h2 , main p{
 footer{
   height: 80px;
   width: 100%;
-  background-color:#282828 ;/* #7E8184    #282828*/
+  background-color:#282828 ;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -339,7 +337,6 @@ footer{
 }
 
 .descrizione-canzone{
- /* line-height: 100px; */
  padding-top: 20px;
  margin-right: 15px;
 }
@@ -368,35 +365,25 @@ footer{
   transform: scale(1.1);
 }
 
-/* .parte-centrale .range{
-  margin-bottom: 20px;
-} */
-
 .parte-centrale .range:before{
   content: "0:25";
-  position: relative;
-  left: -14px;
-  top: 13px;
   color: white;
 }
 
 .parte-centrale .range:after{
   content: "4:35";
-  position: relative;
-  left: 214px;
-  bottom: 14px;
   color: white;
 }
 
  .range {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-end; */
+  text-align: center;
 }
 
 .parte-dx{
   display: flex;
-  /* justify-content: flex-end; */
   align-items: center;
 }
 
@@ -406,50 +393,86 @@ footer{
   margin: 10px 10px;
    color: white;
 }
+
 .parte-dx > ul  li:hover{
   transform: scale(1.1);
 }
 
+/*--- MAEDIA QUERY PER LA BARRA DELLA DURATA ANCHE PER LA BARRA DEL VOLUME  ---*/
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     input[type='range'] {
       overflow: hidden;
-      width: 80px;
+      width: 200px;
       -webkit-appearance: none;
-      background-color:green;/*#9a905d*/
-      padding-left: 175px;
-      margin-left: 27px;
+      background-color: #a2a2a2;
+      border-radius: 5px;
+      height: 5px;
     }
-
     input[type='range']::-webkit-slider-runnable-track {
-      height: 10px;
-      -webkit-appearance: none;
-      color: orange; /*#13bba4*/
-      margin-top: -1px;
+        height: 10px;
+        -webkit-appearance: none;
+        color: #13bba4;
+        margin-top: -1px;
+        background-color: #a2a2a2;
     }
-
     input[type='range']::-webkit-slider-thumb {
-      width: 10px;
-      -webkit-appearance: none;
-      height: 10px;
-      cursor: ew-resize;
-      background: blue; /* #434343*/
-      box-shadow: -80px 0 0 80px #43e5f7;
+        width: 10px;
+        -webkit-appearance: none;
+        height: 10px;
+        cursor: ew-resize;
+        background: #a2a2a2;
+        box-shadow: -100vw 0 0 100vw #FFF;
+        -webkit-appearance: none;
     }
+    input[type='range']:hover::-webkit-slider-thumb {
+        box-shadow: -100vw 0 0 100vw #A7F62D;
+        background: #ffffff;
+        border-radius: 50%;
+      }
+}
 
+/*--- MEDIA QUERY PER TABLET MD ---*/
+
+@media screen and (max-width: 992px) {
+  .card{
+   width: calc(100% /4 -10px);
+  }
+  input[type='range'] {
+    overflow: hidden;
+    width: 80px;
+    -webkit-appearance: none;
+    background-color: #a2a2a2;
+    border-radius: 5px;
+    height: 5px;
+  }
 }
- /*FF/
-input[type="range"]::-moz-range-progress {
-  background-color: yellow;
-}
-input[type="range"]::-moz-range-track {
-  background-color: yellow ; #43e5f7  #9a905d
-}
-/ IE*/
-input[type="range"]::-ms-fill-lower {
-  background-color: yellow ;  /*#43e5f7*/
-}
-input[type="range"]::-ms-fill-upper {
-  background-color: yellow ;  /*#9a905d*/
+
+/*--- MEDIA QUERY PER SM---*/
+
+@media screen and (max-width: 768px) {
+  .card{
+   width: calc(100% /2 -15px);
+  }
+
+  input[type='range'] {
+    overflow: hidden;
+    width: 80px;
+    -webkit-appearance: none;
+    background-color: #a2a2a2;
+    border-radius: 5px;
+    height: 5px;
+  }
+  .preferiti{
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    padding-top: 22px;
+  }
+  .parte-dx > ul li:last-child , .fa-volume-up{
+    display: none;
+  }
+
 }
 
 /*--- MEDIA QUERY PER SMARTPHONE XS ---*/
@@ -457,6 +480,20 @@ input[type="range"]::-ms-fill-upper {
  @media screen and (min-width: 0px) and (max-width: 767px) {
   .card{
    width: calc(100% /2 -10px);
+  }
+  .card img{
+    height: 250px;
+    width: 250px;
+  }
+  .album{
+   height: 250px;
+   width: 250px;
+
+  }
+  .album img{
+   height: 49%;
+   width: 48%;
+   /* margin:0 auto; */
   }
   .side-bar{
    width: 50px;
@@ -497,28 +534,106 @@ input[type="range"]::-ms-fill-upper {
   }
 }
 
-/*--- MEDIA QUERY PER SM---*/
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 571px){
   .card{
    width: calc(100% /2 -10px);
   }
-  .nome-brano{
-    display: flex;
-    flex-direction: column;
-    line-height: 0;
-    padding-top: 22px;
+  .parte-centrale > ul li i{
+    font-size: 15px;
   }
-  .parte-dx > ul li:last-child , .fa-volume-up{
+  .card img{
+    height: 200px;
+    width: 200px;
+  }
+  .album{
+   height: 200px;
+   width: 200px;
+  }
+  .album img{
+   height: 49%;
+   width: 48%;
+   margin:0 auto;
+  }
+  .ragruppo h4, .ragruppo p {
+   width: 200px;
+   text-align: center;
+  }
+}
+
+@media screen and (max-width: 484px){
+  .parte-sx .descrizione-canzone p{
     display: none;
   }
-
-}
-
-/*--- MEDIA QUERY PER TABLET MD ---*/
-
-@media screen and (max-width: 992px) {
-  .card{
-   width: calc(100% /4 -10px);
+  .card img{
+    height: 150px;
+    width: 150px;
+  }
+  .album{
+   height: 150px;
+   width: 150px;
+  }
+  .album img{
+   height: 49%;
+   width: 48%;
+   margin:0 auto;
+  }
+  .ragruppo h4, .ragruppo p {
+   width: 150px;
+   text-align: center;
   }
 }
+
+ @media screen and (max-width: 400px){
+  .card{
+   width: calc(100% /2 -10px);
+  }
+  .card img{
+    height: 130px;
+    width: 130px;
+  }
+  .album{
+   height: 130px;
+   width: 130px;
+  }
+  .album img{
+   height: 49%;
+   width: 48%;
+   margin:0 auto;
+  }
+  .ragruppo h4, .ragruppo p {
+   width: 130px;
+   text-align: center;
+  }
+  .parte-sx .preferiti{
+    display: none;
+  }
+}
+
+ @media screen and (max-width: 375px){
+  .parte-dx > ul{
+    display: none;
+  }
+ }
+
+ @media screen and (max-width: 375px){
+   .card{
+    width: calc(100% /2 -10px);
+   }
+   .card img{
+     height: 130px;
+     width: 130px;
+   }
+   .album{
+    height: 130px;
+    width: 130px;
+   }
+   .album img{
+    height: 49%;
+    width: 48%;
+    margin:0 auto;
+   }
+   .ragruppo h4, .ragruppo p {
+    width: 130px;
+    text-align: center;
+   }
+ }
