@@ -31,6 +31,7 @@ nav > a{
   line-height: 39px;
   color: white;
   text-decoration: none;
+  margin-right: 15px;
 }
 
 nav > a:hover{
@@ -45,7 +46,7 @@ a{
 
 .side-bar{
   width: 200px;
-  height: calc(100% - 100px);
+  height: calc(100% - 80px);
   background-color: black;
   position:fixed;
   top: 0;
@@ -57,8 +58,9 @@ a{
 }
 
 .side-bar img{
-  /* height: 60px; */
-  width: 100%;
+  /* height: 40px; */
+  margin: 0 10px;
+  width: 60%;
 }
 
 .display-none{
@@ -79,7 +81,7 @@ a{
   }
 
  .color-grey{
-   color: #7E8184;
+   color: #888888 ; /* #7E8184 */
  }
 
  .content > ul li >i{
@@ -87,7 +89,7 @@ a{
  }
 
  .border{
-   border-left: 3px solid green;
+   border-left: 3px solid #ADFF2E;
    border-height: 20px;
    height: 30px;
    position: relative;
@@ -112,8 +114,8 @@ a{
 }
 
 .categorie{
-    height: 35vh;
-    overflow-y: auto;
+  height: 35vh;
+  overflow-y: auto;
 }
 
  .playlist{
@@ -159,7 +161,7 @@ a{
 main{
   background-color: #141922;
   padding-left: 210px;
-  /* height: 200vh; */
+  /* height: 140vh; */
 }
 
 main > ul{
@@ -169,8 +171,31 @@ padding: 20px;
 margin-top: 77px;
 }
 main > ul li:first-child{
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid #ADFF2E;
   /* border-bottom-width: medium; */
+}
+#border-bottom{
+  position: relative;
+}
+main > ul #border-bottom:before{
+  content : " ";
+  position: absolute;
+  left    : 0;
+  bottom  : -1px;
+  height  : 0px;
+  width   : 30%;  /* or 100px */
+  border-bottom:1px solid #141922;
+  z-index: 2;
+}
+main > ul #border-bottom:after{
+  content : " ";
+  position: absolute;
+  right    : 0;
+  bottom  : -1px;
+  height  : 1px;
+  width   : 30%;  /* or 100px */
+  border-bottom:1px solid #141922;
+  z-index: 2;
 }
 
 main > ul > li:hover{
@@ -186,6 +211,8 @@ main > ul > li{
 
 main h2 , main p{
   margin-bottom: 15px;
+  margin-left: 6px;
+
 }
 
 .color-white{
@@ -194,16 +221,37 @@ main h2 , main p{
 
 .raccolta{
   display:flex;
-  /* flex-direction: row; */
-  /* flex-shrink: 3; */
   overflow-y: scroll;
   flex-wrap: wrap;
 }
 
-.card > img{
+.ragruppo{
+ width: auto;
+ margin: 0;
+}
+
+.ragruppo h4, .ragruppo p{
+  width: 180px;
+  text-align: center;
+}
+
+.card img{
   height: 180px;
   width: 180px;
 }
+ .album{
+  height: 180px;
+  width: 180px;
+
+}
+.album img{
+
+  height: 49%;
+  width: 48%;
+  /* margin:0 auto; */
+}
+
+
 
 .card > h4 , .card p{
   display: flex;
@@ -211,14 +259,14 @@ main h2 , main p{
 }
 
 .card{
-  margin: 5px;
+  margin: 5px 5px;
   position:relative;
 }
 
 /* PLAYER CON SFOCATURA */
 
 .card .layover{
-  height: 78%;
+  height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
@@ -255,13 +303,16 @@ main h2 , main p{
 .circle{
   border-radius: 50%;
 }
+.layover-circle{
+  border-radius: 50%;
+}
 
 /*--- FOOTER ---*/
 
 footer{
-  height: 100px;
+  height: 80px;
   width: 100%;
-  background-color: #7E8184;
+  background-color:#282828 ;/* #7E8184    #282828*/
   position: fixed;
   bottom: 0;
   left: 0;
@@ -287,30 +338,60 @@ footer{
   margin: 10px 10px;
 }
 
-.block{
-  margin-top: -18px;
-}
-
 .descrizione-canzone{
  /* line-height: 100px; */
  padding-top: 20px;
- margin-right: 30px;
+ margin-right: 15px;
+}
+.descrizione-canzone .underline:hover{
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
 }
 
-.nome-brano{
-  line-height: 73px;
+.preferiti{
+  line-height: 80px;
+}
+.preferiti i:hover{
+  color: white;
+  cursor: pointer;
 }
 
 .parte-centrale > .display-inline li{
    display: inline-block;
    font-size: 25px;
    margin: 10px 10px;
+   color: white;
 }
 
-.parte-centrale{
+.parte-centrale > .display-inline li:hover{
+  transform: scale(1.1);
+}
+
+/* .parte-centrale .range{
+  margin-bottom: 20px;
+} */
+
+.parte-centrale .range:before{
+  content: "0:25";
+  position: relative;
+  left: -14px;
+  top: 13px;
+  color: white;
+}
+
+.parte-centrale .range:after{
+  content: "4:35";
+  position: relative;
+  left: 214px;
+  bottom: 14px;
+  color: white;
+}
+
+ .range {
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .parte-dx{
@@ -323,34 +404,78 @@ footer{
   display: inline-block;
   font-size: 15px;
   margin: 10px 10px;
+   color: white;
+}
+.parte-dx > ul  li:hover{
+  transform: scale(1.1);
 }
 
-/*--- MEDIA QUERY PER TABLET MD ---*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+      overflow: hidden;
+      width: 80px;
+      -webkit-appearance: none;
+      background-color:green;/*#9a905d*/
+      padding-left: 175px;
+      margin-left: 27px;
+    }
 
-@media all and (max-width: 992px) {
-   .card{
-   width: calc(100% / 4 -10px);
-  }
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      color: orange; /*#13bba4*/
+      margin-top: -1px;
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+      width: 10px;
+      -webkit-appearance: none;
+      height: 10px;
+      cursor: ew-resize;
+      background: blue; /* #434343*/
+      box-shadow: -80px 0 0 80px #43e5f7;
+    }
+
 }
-
-/*--- MEDIA QUERY PER SM---*/
-
-@media all and (max-width: 768px) {
-   .card{
-   width: calc(100% /2 -10px);
-  }
+ /*FF/
+input[type="range"]::-moz-range-progress {
+  background-color: yellow;
+}
+input[type="range"]::-moz-range-track {
+  background-color: yellow ; #43e5f7  #9a905d
+}
+/ IE*/
+input[type="range"]::-ms-fill-lower {
+  background-color: yellow ;  /*#43e5f7*/
+}
+input[type="range"]::-ms-fill-upper {
+  background-color: yellow ;  /*#9a905d*/
 }
 
 /*--- MEDIA QUERY PER SMARTPHONE XS ---*/
 
- @media all and (min-width: 0px) and (max-width: 768px) {
-   .card{
+ @media screen and (min-width: 0px) and (max-width: 767px) {
+  .card{
    width: calc(100% /2 -10px);
   }
-   .side-bar{
+  .side-bar{
    width: 50px;
   }
+  .side-bar img , .side-bar .content  ul  li{
+    text-align: center;
+    /* align-items: center; */
+    margin: 10px ;
+    font-size: 25px;
+  }
   .side-bar a , .categorie , .scompari{
+    display: none;
+  }
+  .profile ul li{
+    font-size: 20px;
+    margin: 10px 0;
+    text-align:center;
+  }
+  .profile hr{
     display: none;
   }
   main{
@@ -361,9 +486,39 @@ footer{
   }
   .display-none{
     display: block;
-    height: 50px;
+    /* height: 50px; */
+    margin-top: 5px;
+    font-size: 35px;
+    text-align: center;
+    color: white;
   }
   .logo{
     display: none;
+  }
+}
+
+/*--- MEDIA QUERY PER SM---*/
+
+@media screen and (max-width: 768px) {
+  .card{
+   width: calc(100% /2 -10px);
+  }
+  .nome-brano{
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    padding-top: 22px;
+  }
+  .parte-dx > ul li:last-child , .fa-volume-up{
+    display: none;
+  }
+
+}
+
+/*--- MEDIA QUERY PER TABLET MD ---*/
+
+@media screen and (max-width: 992px) {
+  .card{
+   width: calc(100% /4 -10px);
   }
 }
